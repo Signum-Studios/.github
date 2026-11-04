@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="line" gradientUnits="userSpaceOnUse" x1="90" y1="150" x2="810" y2="150">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B6CF0"/><stop offset="1" stop-color="#4366EC"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B8EF5"/><stop offset="1" stop-color="#2F86F0"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22B0F0"/><stop offset="1" stop-color="#1AA3E8"/></linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1AA3E8"/>
+    </marker>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-size: 17px; font-weight: 700; fill: #1F2937; }
+    .sub   { font-size: 13px; fill: #6B7280; }
+    .loop  { font-size: 13px; font-weight: 600; fill: #1AA3E8; letter-spacing: .3px; }
+    .num   { font-size: 26px; font-weight: 800; fill: #ffffff; }
+    @media (prefers-color-scheme: dark) {
+      .title { fill: #F3F4F6; }
+      .sub   { fill: #9CA3AF; }
+    }
+    .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 5s ease-out infinite; opacity: 0; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .55; } 30% { transform: scale(1.6); opacity: 0; } 100% { opacity: 0; } }
+    .p1 { animation-delay: 0s; } .p2 { animation-delay: 1s; } .p3 { animation-delay: 2s; } .p4 { animation-delay: 3s; } .p5 { animation-delay: 4s; }
+    .dash { stroke-dasharray: 6 8; animation: flow 1.2s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -14; } }
+  </style>
+
+  <!-- main track -->
+  <line x1="90" y1="150" x2="810" y2="150" stroke="url(#line)" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+  <line x1="90" y1="150" x2="810" y2="150" stroke="url(#line)" stroke-width="4" stroke-linecap="round" class="dash"/>
+
+  <!-- loop arrow: Improve back to Monitor -->
+  <path d="M 800 104 C 780 30, 660 30, 640 104" fill="none" stroke="#1AA3E8" stroke-width="3" stroke-linecap="round" class="dash" marker-end="url(#arrow)"/>
+  <text x="720" y="34" text-anchor="middle" class="loop">↻ REPEATS AS YOU GROW</text>
+
+  <!-- travelling dot -->
+  <circle r="7" fill="#ffffff" stroke="#06B6D4" stroke-width="3" filter="url(#glow)">
+    <animateMotion dur="5s" repeatCount="indefinite" path="M90 150 H810"/>
+  </circle>
+
+  <!-- nodes -->
+  <g>
+    <circle cx="90" cy="150" r="42" fill="url(#g1)" class="pulse p1"/>
+    <circle cx="90" cy="150" r="42" fill="url(#g1)"/>
+    <text x="90" y="159" text-anchor="middle" class="num">1</text>
+    <text x="90" y="228" text-anchor="middle" class="title">Intake</text>
+    <text x="90" y="250" text-anchor="middle" class="sub">Your goals &amp; needs</text>
+  </g>
+  <g>
+    <circle cx="270" cy="150" r="42" fill="url(#g2)" class="pulse p2"/>
+    <circle cx="270" cy="150" r="42" fill="url(#g2)"/>
+    <text x="270" y="159" text-anchor="middle" class="num">2</text>
+    <text x="270" y="228" text-anchor="middle" class="title">Design &amp; Build</text>
+    <text x="270" y="250" text-anchor="middle" class="sub">Tailored to your brand</text>
+  </g>
+  <g>
+    <circle cx="450" cy="150" r="42" fill="url(#g3)" class="pulse p3"/>
+    <circle cx="450" cy="150" r="42" fill="url(#g3)"/>
+    <text x="450" y="159" text-anchor="middle" class="num">3</text>
+    <text x="450" y="228" text-anchor="middle" class="title">Launch &amp; Host</text>
+    <text x="450" y="250" text-anchor="middle" class="sub">Live, secure, maintained</text>
+  </g>
+  <g>
+    <circle cx="630" cy="150" r="42" fill="url(#g4)" class="pulse p4"/>
+    <circle cx="630" cy="150" r="42" fill="url(#g4)"/>
+    <text x="630" y="159" text-anchor="middle" class="num">4</text>
+    <text x="630" y="228" text-anchor="middle" class="title">Monitor</text>
+    <text x="630" y="250" text-anchor="middle" class="sub">Traffic &amp; behavior</text>
+  </g>
+  <g>
+    <circle cx="810" cy="150" r="42" fill="url(#g5)" class="pulse p5"/>
+    <circle cx="810" cy="150" r="42" fill="url(#g5)"/>
+    <text x="810" y="159" text-anchor="middle" class="num">5</text>
+    <text x="810" y="228" text-anchor="middle" class="title">Improve</text>
+    <text x="810" y="250" text-anchor="middle" class="sub">Data-driven updates</text>
+  </g>
+</svg>
