@@ -45,7 +45,7 @@ We track your traffic and visitor behavior, share clear insights, and keep impro
 ## 🔄 How we work with you
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Signum-Studios/.github/main/profile/process.svg" width="100%" alt="Our process: Intake, Design & Build, Launch & Host, Monitor, Improve" />
+  <img src="./process.svg" width="100%" alt="Our process: Intake, Design & Build, Launch & Host, Monitor, Improve" />
 </div>
 
 <table>
